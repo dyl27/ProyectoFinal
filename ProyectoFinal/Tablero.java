@@ -100,7 +100,7 @@ public class Tablero{
      	 //numeros horizontales.
     	 for(int i = 0; i<a.length; i++){
          if(i == 0){
-           System.out.print("                   "+"\033[45;30m"+"\033[37m"+ " C "+ "\033[0m" + "\033[0m"+ this.color  + " "+ i );
+           System.out.print("                                   "+"\033[45;30m"+"\033[37m"+ " C "+ "\033[0m" + "\033[0m"+ this.color  + " "+ i );
          }
          if(i<10 && i>0){
            System.out.print(this.color +"  "+ i + reset);
@@ -114,7 +114,7 @@ public class Tablero{
        //Linea superior
             for(int i = 0; i <= ((a.length*3) + 4) - 3; i++) {
             	  if(i == 0){
-            	   System.out.print("                    ╔");	
+            	   System.out.print("                                    ╔");	
             	  }
                 System.out.print("═");
                 if(i == ((a.length*3) + 4) - 3){
@@ -125,7 +125,7 @@ public class Tablero{
            
             //centro de la forma
             for(int i = 0; i <= a.length-1; i++) {
-                System.out.print("                    ║" + " ");
+                System.out.print("                                    ║" + " ");
                 for(int j = 0; j <= a.length-1; j++) {
                   if(j >= 0 && i >= 0 && j <=a.length && i<=a.length){
                   	 
@@ -146,7 +146,7 @@ public class Tablero{
             //Linea inferior
             for(int i = 0; i <= ((a.length*3) + 4) - 3; i++) {
             	  if(i == 0){
-            	   System.out.print("                    ╚");	
+            	   System.out.print("                                    ╚");	
             	  }
                 System.out.print("═");
                 if(i == ((a.length*3) + 4) - 3){

@@ -169,12 +169,13 @@ public class AjedrezJuego{
 
   public static void turnoJugador1(Tablero tablero,String nombreJugador1, Piezas[] piezas)throws InputMismatchException, ArrayIndexOutOfBoundsException{
     //Piezas del primer jugador que seran de color blanco.
-    String[] piezasMenu = new String[5];
+    String[] piezasMenu = new String[6];
     piezasMenu[0] = "Peones(P)";
     piezasMenu[1] = "Rey(R)";
     piezasMenu[2] = "Reina(A)";
     piezasMenu[3] = "Torres(T)";
     piezasMenu[4] = "Caballos(C)";
+    piezasMenu[5] = "Eliminar pieza contraria";
     boolean salidaMenuPiezas = false;
     do{
     //Seleccion de piezas a tirar.
@@ -182,7 +183,7 @@ public class AjedrezJuego{
     System.out.println("\033[42;30m"+"\033[37m" + "Selecciona la pieza a tirar " + nombreJugador1+": Piezas blancas" + "\033[0m");
     System.out.println();
     for(int i = 0; i<piezasMenu.length; i++){
-      System.out.print("\t" + (i+1)  + " ⇨ " + piezasMenu[i]);
+      System.out.print("\t"  +  "\033[44;37m" + "\033[37m" + " " +(i+1) + " "  + "\033[0m" +"\033[41;34m"+ "\033[37m" +  "⇨ " + piezasMenu[i]  + "\033[0m");
 
     }
     System.out.println();
@@ -549,7 +550,9 @@ public class AjedrezJuego{
       tablero.obtenerTableroCompleto();
       System.out.println();
       break;
-
+      case 6:
+        System.out.println("Eliminar una pieza xd");
+      break;  
      default:
       System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar un valor apropiado!!" + "\u001B[0m" + "\u001B[0m");
       salidaMenuPiezas = true;
@@ -565,12 +568,13 @@ public class AjedrezJuego{
   //Turno del jugador dos.
   public static void turnoJugador2(Tablero tablero, String nombreJugador2, Piezas[] piezas)throws InputMismatchException,ArrayIndexOutOfBoundsException{
     //Piezas del segundo jugador que seran de color negro.
-    String[] piezasMenu = new String[5];
+    String[] piezasMenu = new String[6];
     piezasMenu[0] = "Peones(P)";
     piezasMenu[1] = "Rey(R)";
     piezasMenu[2] = "Reina(A)";
     piezasMenu[3] = "Torres(T)";
     piezasMenu[4] = "Caballos(C)";
+    piezasMenu[5] = "Eliminar pieza contraria";
     boolean salidaMenuPiezas = false;
     do{
     //Seleccion de piezas a tirar.
@@ -578,7 +582,7 @@ public class AjedrezJuego{
     System.out.println("\033[44;37m "+"\033[37m" + "Selecciona la pieza a tirar " + nombreJugador2+": Piezas negras" + "\033[0m");
     System.out.println();
     for(int i = 0; i<piezasMenu.length; i++){
-      System.out.print("\t" + (i+1)  + "⇨ " + piezasMenu[i]);
+      System.out.print("\t"  +  "\033[44;37m" + "\033[37m" + " " +(i+1) + " "  + "\033[0m" +"\033[41;34m"+ "\033[37m" +  "⇨ " + piezasMenu[i]  + "\033[0m");
 
     }
     System.out.println();
@@ -808,7 +812,7 @@ public class AjedrezJuego{
       while(salidaTorres){
        try{
          Scanner seleccionarTorre = new Scanner(System.in);
-         System.out.println("\033[44;37m" + " " + "Selecciona las coordenadas " + nombreJugador2 + ": Torres blancas" + " " + "\033[0m" );
+         System.out.println("\033[44;37m" + " " + "Selecciona las coordenadas " + nombreJugador2 + ": Torres negras" + " " + "\033[0m" );
          System.out.println();
          System.out.println("Introduce el valor de la Columna "+ "\033[45;30m"+"\033[37m"+ " F "+ "\033[0m" + "\033[0m" + " donde se encuentra la Torre que deseas mover: ");
          int torreF = seleccionarTorre.nextInt();
@@ -946,6 +950,9 @@ public class AjedrezJuego{
       tablero.obtenerTableroCompleto();
       System.out.println();
       break; 
+      case 6 :
+        System.out.println("Eliminar pieza!!");
+      break;
      default:
       System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar un valor apropiado!!" + "\u001B[0m" + "\u001B[0m");
       salidaMenuPiezas = true;
