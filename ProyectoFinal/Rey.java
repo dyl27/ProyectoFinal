@@ -57,7 +57,7 @@ public class Rey extends Piezas{
 	   if(tablero.valorPosicion(posicionX,posicionY) && tablero.obtenerReferenciaObjeto(tablero.obtenerCoordenadaX(this),tablero.obtenerCoordenadaY(this)).obtenerColor().equals(tablero.obtenerReferenciaObjeto(posicionX,posicionY).obtenerColor())){
          throw new movimientoInvalido("Existe una pieza de tu miso color en las coordenadas donde deseas mover al Rey!!");
 	   }
-	   
+	    
 
         //Restricciones Rey blanco.
 	    //restriccion en la parte superior del  tablero.
