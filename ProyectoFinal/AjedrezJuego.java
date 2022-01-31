@@ -25,7 +25,8 @@ public class AjedrezJuego{
   public static void menu(){
    boolean salidaMenu = false;
    do{ 
-    Scanner preguntaMenu = new Scanner(System.in);
+    try{
+       Scanner preguntaMenu = new Scanner(System.in);
     System.out.println("Selecciona una opcion: ");
     System.out.println("\t" + "1" + " ⇨ " + "Ver Puntajes");
     System.out.println("\t" + "2" + " ⇨ " + "Salir");
@@ -51,7 +52,13 @@ public class AjedrezJuego{
      System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar un valor valido!!" + "\u001B[0m" + "\u001B[0m");
      salidaMenu = true; 
    
+     }
+
+    }catch(InputMismatchException e){
+      System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar valores numericos!!" + "\u001B[0m" + "\u001B[0m");
+      salidaMenu = true;
     }
+   
 
    }while(salidaMenu);
 
@@ -178,7 +185,8 @@ public class AjedrezJuego{
     piezasMenu[5] = "Eliminar pieza contraria";
     boolean salidaMenuPiezas = false;
     do{
-    //Seleccion de piezas a tirar.
+     try{
+      //Seleccion de piezas a tirar.
     System.out.println();  
     System.out.println("\033[42;30m"+"\033[37m" + "Selecciona la pieza a tirar " + nombreJugador1+": Piezas blancas" + "\033[0m");
     System.out.println();
@@ -557,8 +565,14 @@ public class AjedrezJuego{
       System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar un valor apropiado!!" + "\u001B[0m" + "\u001B[0m");
       salidaMenuPiezas = true;
     
-    }
+     }
 
+      
+     }catch(InputMismatchException e){
+       System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar un valor numerico!!" + "\u001B[0m" + "\u001B[0m");
+      salidaMenuPiezas = true;
+
+     }
   
    }while(salidaMenuPiezas);
    
@@ -577,7 +591,8 @@ public class AjedrezJuego{
     piezasMenu[5] = "Eliminar pieza contraria";
     boolean salidaMenuPiezas = false;
     do{
-    //Seleccion de piezas a tirar.
+     try{ 
+      //Seleccion de piezas a tirar.
     System.out.println(); 
     System.out.println("\033[44;37m "+"\033[37m" + "Selecciona la pieza a tirar " + nombreJugador2+": Piezas negras" + "\033[0m");
     System.out.println();
@@ -957,7 +972,12 @@ public class AjedrezJuego{
       System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar un valor apropiado!!" + "\u001B[0m" + "\u001B[0m");
       salidaMenuPiezas = true;
     
-    }
+      }
+
+     }catch(InputMismatchException e){
+       System.out.println("\u001B[40;30m" + "\u001B[31m" + "Debes ingresar un valor numerico!!" + "\u001B[0m" + "\u001B[0m");
+      salidaMenuPiezas = true;
+     }
 
   
    }while(salidaMenuPiezas);
